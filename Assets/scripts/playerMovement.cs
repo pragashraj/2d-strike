@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private PlayerAnimationControl animationControl;
+    public Joystick joystick;
+
+    public float runSpeed = 1;
+    float horizontalMove = 0;
+
     void Start()
     {
-        
+        animationControl = gameObject.GetComponent<PlayerAnimationControl>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        horizontalMove = joystick.Horizontal * runSpeed;
+        gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
     }
 }
