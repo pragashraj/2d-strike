@@ -8,7 +8,8 @@ public class playerMovement : MonoBehaviour
     public Joystick joystick;
 
     public float runSpeed = 1;
-    float horizontalMove = 0;
+    public float horizontalMove = 0;
+    public float verticalMove = 0;
 
     void Start()
     {
@@ -19,6 +20,46 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = joystick.Horizontal * runSpeed;
-        gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
+        verticalMove = joystick.Vertical * runSpeed;
+
+        run(horizontalMove);
+        jumpOrCrounch(verticalMove);
     }
+
+
+    void run(float horizontalMove)
+    {
+        if (horizontalMove >= 0.02f)
+        {
+            animationControl.runAnimation(true);
+            gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
+        }else if (horizontalMove <= -0.02f)
+        {
+            animationControl.runAnimation(true);
+            gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
+        }
+        else
+        {
+            animationControl.runAnimation(false);
+        }
+    }
+
+    void jumpOrCrounch(float verticalMove)
+    {
+        if (verticalMove >= 0.02f)
+        {
+            animationControl.jumpAnimation();
+            gameObject.transform.Translate(new Vector3(0, verticalMove, 0));
+        }
+        else if(verticalMove <= -0.02f)
+        {
+            animationControl.crounchAnimation(true);
+        }
+        else
+        {
+            animationControl.crounchAnimation(false);
+        }
+    }
+
+   
 }
