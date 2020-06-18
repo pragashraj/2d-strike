@@ -7,20 +7,26 @@ public class playerMovement : MonoBehaviour
     private PlayerAnimationControl animationControl;
     public Joystick joystick;
 
-    public float runSpeed = 1;
+    public float runSpeed = 0.1f;
+    public float jumplength = 0.1f;
     public float horizontalMove = 0;
     public float verticalMove = 0;
+
+    public float horizontalMoveCondition=2;
+    public float verticalMoveCondition = 2;
 
     void Start()
     {
         animationControl = gameObject.GetComponent<PlayerAnimationControl>();
+       // gameObject.transform.localScale = new Vector3(10, 10, 0);
+        //gameObject.transform.localPosition = new Vector3(0, 0, 0);
     }
 
 
     void Update()
     {
         horizontalMove = joystick.Horizontal * runSpeed;
-        verticalMove = joystick.Vertical * runSpeed;
+        verticalMove = joystick.Vertical * jumplength;
 
         run(horizontalMove);
         jumpOrCrounch(verticalMove);
@@ -29,11 +35,11 @@ public class playerMovement : MonoBehaviour
 
     void run(float horizontalMove)
     {
-        if (horizontalMove >= 0.02f)
+        if (horizontalMove >= horizontalMoveCondition)
         {
             animationControl.runAnimation(true);
             gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
-        }else if (horizontalMove <= -0.02f)
+        }else if (horizontalMove <= -horizontalMoveCondition)
         {
             animationControl.runAnimation(true);
             gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
@@ -46,12 +52,12 @@ public class playerMovement : MonoBehaviour
 
     void jumpOrCrounch(float verticalMove)
     {
-        if (verticalMove >= 0.02f)
+        if (verticalMove >= verticalMoveCondition)
         {
             animationControl.jumpAnimation();
             gameObject.transform.Translate(new Vector3(0, verticalMove, 0));
         }
-        else if(verticalMove <= -0.02f)
+        else if(verticalMove <= -verticalMoveCondition)
         {
             animationControl.crounchAnimation(true);
         }
