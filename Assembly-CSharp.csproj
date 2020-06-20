@@ -70,8 +70,12 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\scripts\Audio\Sound.cs" />
+    <Compile Include="Assets\scripts\Barriers\BarrierTrigger.cs" />
     <Compile Include="Assets\scripts\CameraFollow.cs" />
     <Compile Include="Assets\scripts\PlayerAnimationControl.cs" />
+    <Compile Include="Assets\scripts\credits\GlobalCredits.cs" />
     <Compile Include="Assets\scripts\playerMovement.cs" />
     <Compile Include="Assets\scripts\points\ItemsTrigger.cs" />
     <Reference Include="Unity.Timeline.Editor">

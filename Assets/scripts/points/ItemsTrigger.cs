@@ -5,15 +5,16 @@ using UnityEngine;
 public class ItemsTrigger : MonoBehaviour
 {
     string Owntag;
+    public GameObject GlobalCreditOb;
+    private GlobalCredits globalCredits;
+
+
     void Start()
     {
         Owntag = gameObject.tag;
+        globalCredits = GlobalCreditOb.GetComponent<GlobalCredits>();
     }
 
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +23,13 @@ public class ItemsTrigger : MonoBehaviour
             switch (Owntag)
             {
                 case "gem":
-                    print(tag);
+                    globalCredits.gemCount += 1;
+                    gameObject.SetActive(false);
+                    break;
+
+                case "cherry":
+                    globalCredits.cherryCount += 1;
+                    gameObject.SetActive(false);
                     break;
 
                 default: break;

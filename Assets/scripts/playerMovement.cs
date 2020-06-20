@@ -18,8 +18,6 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         animationControl = gameObject.GetComponent<PlayerAnimationControl>();
-       // gameObject.transform.localScale = new Vector3(10, 10, 0);
-        //gameObject.transform.localPosition = new Vector3(0, 0, 0);
     }
 
 
