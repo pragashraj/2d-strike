@@ -74,6 +74,8 @@
     <Compile Include="Assets\scripts\Audio\Sound.cs" />
     <Compile Include="Assets\scripts\Barriers\BarrierTrigger.cs" />
     <Compile Include="Assets\scripts\CameraFollow.cs" />
+    <Compile Include="Assets\scripts\Health\HealthBar.cs" />
+    <Compile Include="Assets\scripts\Health\PlayerHealth.cs" />
     <Compile Include="Assets\scripts\PlayerAnimationControl.cs" />
     <Compile Include="Assets\scripts\credits\GlobalCredits.cs" />
     <Compile Include="Assets\scripts\playerMovement.cs" />

@@ -23,11 +23,13 @@ public class ItemsTrigger : MonoBehaviour
             switch (Owntag)
             {
                 case "gem":
+                    FindObjectOfType<AudioManager>().Play("diamondCollection");
                     globalCredits.gemCount += 1;
                     gameObject.SetActive(false);
                     break;
 
                 case "cherry":
+                    FindObjectOfType<AudioManager>().Play("cherryCollection");
                     globalCredits.cherryCount += 1;
                     gameObject.SetActive(false);
                     break;
@@ -36,4 +38,7 @@ public class ItemsTrigger : MonoBehaviour
             }
         }
     }
+
+
+
 }

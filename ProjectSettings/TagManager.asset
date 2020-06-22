@@ -6,6 +6,7 @@ TagManager:
   tags:
   - gem
   - cherry
+  - eagle
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ public class playerMovement : MonoBehaviour
     public float jumplength = 0.1f;
     public float horizontalMove = 0;
     public float verticalMove = 0;
+    public float crounchhorizontalMove = 0;
 
     public float horizontalMoveCondition=2;
     public float verticalMoveCondition = 2;
@@ -39,8 +40,8 @@ public class playerMovement : MonoBehaviour
             gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
         }else if (horizontalMove <= -horizontalMoveCondition)
         {
-            animationControl.runAnimation(true);
-            gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
+           // animationControl.runAnimation(true);
+            //gameObject.transform.Translate(new Vector3(horizontalMove, 0, 0));
         }
         else
         {
@@ -52,16 +53,19 @@ public class playerMovement : MonoBehaviour
     {
         if (verticalMove >= verticalMoveCondition)
         {
-            animationControl.jumpAnimation();
+            //animationControl.jumpAnimation();
             gameObject.transform.Translate(new Vector3(0, verticalMove, 0));
         }
         else if(verticalMove <= -verticalMoveCondition)
         {
             animationControl.crounchAnimation(true);
+            gameObject.transform.Translate(new Vector3(crounchhorizontalMove, 0, 0));
+            gameObject.GetComponent<CircleCollider2D>().radius = 0.01f;
         }
         else
         {
             animationControl.crounchAnimation(false);
+            gameObject.GetComponent<CircleCollider2D>().radius = 0.12f;
         }
     }
 
