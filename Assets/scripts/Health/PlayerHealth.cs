@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health > 0)
         {
-            health -= 3;
+            health -= 5;
             health = Mathf.Clamp(health, 0, 100);
             healthBar.fillingAmount = health;
         }

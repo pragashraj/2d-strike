@@ -7,12 +7,13 @@ public class ItemsTrigger : MonoBehaviour
     string Owntag;
     public GameObject GlobalCreditOb;
     private GlobalCredits globalCredits;
-
+    private Animator animator;
 
     void Start()
     {
         Owntag = gameObject.tag;
         globalCredits = GlobalCreditOb.GetComponent<GlobalCredits>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
 
@@ -25,7 +26,8 @@ public class ItemsTrigger : MonoBehaviour
                 case "gem":
                     FindObjectOfType<AudioManager>().Play("diamondCollection");
                     globalCredits.gemCount += 1;
-                    gameObject.SetActive(false);
+                    animator.SetTrigger("item-feed");
+                    StartCoroutine(setGameObjectActivation());
                     break;
 
                 case "cherry":
@@ -37,6 +39,14 @@ public class ItemsTrigger : MonoBehaviour
                 default: break;
             }
         }
+    }
+
+
+    IEnumerator setGameObjectActivation()
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
+        print("ser");
     }
 
 

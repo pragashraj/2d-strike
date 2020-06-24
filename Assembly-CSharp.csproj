@@ -74,6 +74,7 @@
     <Compile Include="Assets\scripts\Audio\Sound.cs" />
     <Compile Include="Assets\scripts\Barriers\BarrierTrigger.cs" />
     <Compile Include="Assets\scripts\CameraFollow.cs" />
+    <Compile Include="Assets\scripts\Enemies\OpossumControl.cs" />
     <Compile Include="Assets\scripts\Health\HealthBar.cs" />
     <Compile Include="Assets\scripts\Health\PlayerHealth.cs" />
     <Compile Include="Assets\scripts\PlayerAnimationControl.cs" />
