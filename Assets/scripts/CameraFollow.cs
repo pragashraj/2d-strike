@@ -6,6 +6,8 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform followObject;
     public float x;
+    public bool canFollow = true;
+
     void Start()
     {
         x = followObject.position.x;
@@ -13,7 +15,11 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        x = followObject.position.x;
-        gameObject.transform.position = new Vector3(x+5f, 0, -10);
+        if (canFollow)
+        {
+            x = followObject.position.x;
+            gameObject.transform.position = new Vector3(x + 5f, 0, -10);
+        }
+        
     }
 }

@@ -16,7 +16,6 @@ public class ItemsTrigger : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -46,7 +45,6 @@ public class ItemsTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
-        print("ser");
     }
 
 

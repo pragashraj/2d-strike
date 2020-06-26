@@ -22,7 +22,7 @@ public class BarrierTrigger : MonoBehaviour
         {
             animationControl.hurtAnimation();
             player.transform.Translate(new Vector3(backForce, 0, 0));
-            playerHealth.reduceHealth();
+            playerHealth.reduceHealth(5);
         }
     }
 }

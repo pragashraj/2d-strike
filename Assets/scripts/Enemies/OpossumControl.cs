@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OpossumControl : MonoBehaviour
 {
-    public float runningSpeed = 0.4f;
+    public float runningSpeed = -0.4f;
 
     void Start()
     {

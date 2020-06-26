@@ -16,21 +16,21 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void reduceHealth()
+    public void reduceHealth(float healthLoss)
     {
         if (health > 0)
         {
-            health -= 5;
+            health -= healthLoss;
             health = Mathf.Clamp(health, 0, 100);
             healthBar.fillingAmount = health;
         }
     }
 
-    public void increaseHealth()
+    public void increaseHealth(float healthGain)
     {
         if (health < 100)
         {
-            health += 10;
+            health += healthGain;
             health = Mathf.Clamp(health, 0, 100);
             healthBar.fillingAmount = health;
         }
