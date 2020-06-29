@@ -74,9 +74,11 @@
     <Compile Include="Assets\scripts\Audio\Sound.cs" />
     <Compile Include="Assets\scripts\Barriers\BarrierTrigger.cs" />
     <Compile Include="Assets\scripts\Barriers\GameEndTrigger.cs" />
+    <Compile Include="Assets\scripts\Barriers\Redirect.cs" />
     <Compile Include="Assets\scripts\Barriers\StopCamera.cs" />
     <Compile Include="Assets\scripts\CameraFollow.cs" />
     <Compile Include="Assets\scripts\Enemies\EnemyDeath.cs" />
+    <Compile Include="Assets\scripts\Enemies\FrogMovementControl.cs" />
     <Compile Include="Assets\scripts\Enemies\OpossumControl.cs" />
     <Compile Include="Assets\scripts\Health\HealthBar.cs" />
     <Compile Include="Assets\scripts\Health\PlayerHealth.cs" />

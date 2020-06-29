@@ -6,11 +6,6 @@ public class OpossumControl : MonoBehaviour
 {
     public float runningSpeed = -0.4f;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         run();

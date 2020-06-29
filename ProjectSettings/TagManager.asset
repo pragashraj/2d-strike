@@ -7,6 +7,8 @@ TagManager:
   - gem
   - cherry
   - eagle
+  - opossum
+  - frog
   layers:
   - Default
   - TransparentFX

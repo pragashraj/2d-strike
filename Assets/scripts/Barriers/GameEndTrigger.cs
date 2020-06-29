@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameEndTrigger : MonoBehaviour
 {
     public GameObject[] UIs;
+    public GameObject showUpUI;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +16,8 @@ public class GameEndTrigger : MonoBehaviour
             {
                 UIs[i].SetActive(false);
             }
+
+            showUpUI.SetActive(true);
         }
     }
 }
