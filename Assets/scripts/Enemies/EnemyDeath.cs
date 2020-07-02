@@ -7,6 +7,7 @@ public class EnemyDeath : MonoBehaviour
     public GameObject player;
     private PlayerHealth playerHealth;
     Animator animator;
+    public GameObject throwable;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class EnemyDeath : MonoBehaviour
             animator.SetTrigger("enemy-death");
             playerHealth.increaseHealth(3);
             StartCoroutine(setGameObjectActivation());
+            if (gameObject.tag == "eagle")
+            {
+                throwable.SetActive(false);
+            }
         }
     }
 
