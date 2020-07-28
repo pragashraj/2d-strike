@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     private playerMovement PlayerMovement;
     public GameObject pause;
 
+    public bool gameEnd = false;
+
     void Start()
     {
         playerHealth = player.GetComponent<PlayerHealth>();
         PlayerMovement = player.GetComponent<playerMovement>();
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -23,14 +26,18 @@ public class GameManager : MonoBehaviour
             gameOver.SetActive(true);
             PlayerMovement.enabled = false;
             Time.timeScale = 0;
+            gameEnd = true;
         }
     }
 
 
     public void pauseGame()
     {
-        pause.SetActive(true);
-        Time.timeScale = 0;
+        if (playerHealth.health > 0 && !gameEnd)
+        {
+            pause.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
 

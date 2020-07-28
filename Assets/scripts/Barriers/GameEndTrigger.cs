@@ -18,6 +18,7 @@ public class GameEndTrigger : MonoBehaviour
             }
 
             showUpUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

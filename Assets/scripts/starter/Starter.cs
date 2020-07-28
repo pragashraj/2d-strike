@@ -9,7 +9,7 @@ public class Starter : MonoBehaviour
 
     public void play()
     {
-        SceneManager.LoadScene(1);
+       SceneManager.LoadScene(1);   
     }
 
     public void quit()
@@ -20,5 +20,11 @@ public class Starter : MonoBehaviour
     public void resume()
     {
         pauseMenu.SetActive(false);
+    }
+
+
+    public void backToStarter()
+    {
+        SceneManager.LoadScene(0);
     }
 }
